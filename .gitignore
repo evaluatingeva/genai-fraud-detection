@@ -1,0 +1,25 @@
+# Python and virtual environment
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Artifacts and cache
+src/artifacts/
+*.pkl
+*.joblib
+*.h5
+*.npy
+*.npz
+*.csv
+*.json
+*.png
+
+# Environment variables
+.env
+
+# VSCode and system files
+.vscode/
+.DS_Store
+Thumbs.db

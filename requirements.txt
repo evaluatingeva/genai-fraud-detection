@@ -1,0 +1,24 @@
+# Core libraries
+pandas
+numpy
+scikit-learn
+matplotlib
+
+# Deep learning + Generative AI
+requests
+torch
+transformers
+sentencepiece  # required by Gemma tokenizer
+accelerate     # optimizes model loading (optional but useful)
+
+# API and Web
+fastapi
+uvicorn
+pydantic
+python-multipart
+
+# (Optional) Streamlit if you plan to build a front-end dashboard later
+streamlit
+python-dotenv 
+joblib
+
