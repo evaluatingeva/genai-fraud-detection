@@ -15,19 +15,12 @@ Thumbs.db
 # === Environment files ===
 .env
 
-# === Hugging Face cache ===
-src/artifacts/hf_cache/
-src/artifacts/llm_cache.json
-
 # === Data ===
 data/dataset.csv
 data/predictions.csv
 data/new_transactions.csv
 
 # === Model artifacts ===
-# Only keep the essential four below
-!src/artifacts/trained_fraud_model.pkl
-!src/artifacts/scaler.pkl
-!src/artifacts/feature_columns.pkl
-# Exclude the heavy one
+src/artifacts/trained_fraud_model.pkl
+src/artifacts/scaler.pkl
 src/artifacts/freq_maps.pkl
