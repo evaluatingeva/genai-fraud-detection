@@ -1,5 +1,6 @@
 # src/explainer.py
 import os
+import gdown
 import json
 import time
 import joblib
@@ -15,7 +16,20 @@ MODEL_PATH = os.path.join(ARTIFACT_DIR, "trained_fraud_model.pkl")
 CACHE_FILE = os.path.join(ARTIFACT_DIR, "llm_cache.json")
 DEFAULT_THRESHOLD = 0.54
 
+def download_artifacts_if_missing():
+    os.makedirs("src/artifacts", exist_ok=True)
 
+    files = {
+        "trained_fraud_model.pkl": "1iIR8Vwde_fK9p_F8SBk5xPtZdfVllgA2",  
+        "scaler.pkl": "1M6_M2YAHGY2-tQje7QfLAcOHxc8fEJz_", 
+        "freq_maps.pkl": "1iUJaCcKcN-mFv_WMp01u9HMO3w26IT9B",
+    }
+
+    for name, file_id in files.items():
+        path = os.path.join("src/artifacts", name)
+        if not os.path.exists(path):
+            print(f"Downloading {name} from Google Drive...")
+            gdown.download(f"https://drive.google.com/uc?id={file_id}", path, quiet=False)
 # ------------------- CACHE HELPERS -------------------
 
 def _load_cache():
